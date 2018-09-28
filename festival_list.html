@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" Content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <title>ToyProject</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .header {
+            background-color: #f1f1f1;
+            padding: 80px;
+            text-align: center;
+            background-image: url(9.png);
+            background-size: cover;
+        }
+
+        /*글씨 있으면*/
+
+        .header h1 {
+            color: white;
+        }
+
+        .header p {
+            color: rgb(78, 78, 78);
+        }
+
+
+
+        /* 슬라이딩 배너 */
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 510px;
+            top: 0px;
+            margin: 0 auto;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .banner ul {
+            position: absolute;
+            margin: 0px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .banner ul li {
+            float: left;
+            width: 1265px;
+            height: 50px;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+
+        /*냅바*/
+
+        #navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: sticky;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 20px 27px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        #navbar a.active {
+            background-color: rgb(255, 242, 183);
+            color: black;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 16px;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .sticky+.content {
+            padding-top: 60px;
+        }
+
+
+
+
+        /*접기기능*/
+
+        .collapsible {
+            background-color: #fcce6a;
+            color: rgb(66, 66, 66);
+            cursor: pointer;
+            padding: 13px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .collapsible2 {
+            background-color: #ffcb59;
+            color: rgb(66, 66, 66);
+            cursor: pointer;
+            padding: 13px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .collapsible3 {
+            background-color: #ffc444;
+            color: rgb(66, 66, 66);
+            cursor: pointer;
+            padding: 13px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 17px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .active,
+        .collapsible:hover {
+            background-color: rgb(255, 221, 126);
+            color: rgb(0, 20, 65);
+        }
+
+        .active2,
+        .collapsible2:hover {
+            background-color: rgb(255, 221, 126);
+            color: rgb(0, 20, 65);
+        }
+
+        .active3,
+        .collapsible3:hover {
+            background-color: rgb(255, 221, 126);
+            color: rgb(0, 20, 65);
+        }
+
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .content2 {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .content3 {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        #title {
+            display: block;
+            font-size: 3.5em;
+            margin-top: 0.4em;
+            margin-bottom: 0.4em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="banner">
+            <ul>
+                <li>
+                    <img src="에버랜드_벚꽃축제.png" width="100%" height="510px">
+                </li>
+                <li>
+                    <img src="태안_세계튤립축제.png" width="100%" height="510px">
+                </li>
+                <li>
+                    <img src="안성_호밀밭축제.png" width="100%" height="510px">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <!-- 냅바 -->
+    <div id="navbar">
+        <a class="active" href="javascript:void(0)">HOME</a>
+        <a id="news" href="">News</a>
+        <a href="#about">Contact</a>
+        <form class="navbar-form navbar-left" role="search"></form>
+        <a style="float:right" class="active" href="">About</a>
+    </div>
+
+
+
+
+
+    <!-- 접기기능 -->
+    <div></div>
+    <button class="collapsible">에버랜드 튤립축제</button>
+    <div class="content">
+        <li>기간: 2018.03.16(금)~2018.04.29(일)</li>
+        <li>장소: 에버랜드</li>
+        <li>주최: 에버랜드</li>
+        <li>정보:
+            <a href="http://www.everland.com/web/everland/main.html">공식홈페이지</a>
+        </li>
+        <li>요금: 이용요금 안내는 홈페이지 참조</li>
+        <li>
+            <img="..." />
+    </div>
+
+    <button class="collapsible2">광양매화축제</button>
+    <div class="content2">
+        <li>기간: 2018.03.17(토)~2018.03.25(일)</li>
+        <li>장소: 섬진마을 및 시 전역</li>
+        <li>주최: 광양시</li>
+        <li>정보:
+            <a href="http://www.gwangyang.go.kr/tour_culture/index.gwangyang?menuCd=DOM_000000403001002001">오시는길</a>,
+            <a href="http://www.gwangyang.go.kr/tour_culture/index.gwangyang">문화관광</a>
+        </li>
+        <li>요금: 무료</li>
+        <li>
+            <img="..." />
+
+    </div>
+
+    <button class="collapsible3">구례산수유꽃축제</button>
+    <div class="content3">
+        <li>기간: 2018.03.17(토)~2018.03.25(일)</li>
+        <li>장소: 전남 구례군 지리산온천관광단지 일원</li>
+        <li>주최: 구례군축제진위원회</li>
+        <li>정보:
+            <a href="http://www.gurye.go.kr/sanflower/">공식홈페이지</a>,
+            <a href="http://www.gwangyang.go.kr/tour_culture/index.gwangyang?menuCd=DOM_000000403001002001">오시는길</a>,
+            <a href="http://tour.gurye.go.kr/jcms/guryetours/">문화관광</a>
+        </li>
+        <li>요금: 무료</li>
+        <li>
+            <img="..." />
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--배너-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script language="JavaScript">
+		$(document).ready(function () {
+			//사용할 배너
+			var $banner = $(".banner").find("ul");
+
+			var $bannerWidth = $banner.children().outerWidth(); //배너 이미지의 폭
+			var $bannerHeight = $banner.children().outerHeight(); // 높이
+			var $bannerLength = $banner.children().length; //배너 이미지의 갯수
+			var rollingId;
+
+			//정해진 초마다 함수 실행
+			rollingId = setInterval(function () {
+				rollingStart();
+			}, 5000); //다음 이미지로 롤링 애니메이션 할 시간차
+
+
+			/*
+					//마우스 오버시 롤링을 멈춘다.
+					banner.mouseover(function(){
+						//중지
+						clearInterval(rollingId);
+						$(this).css("cursor", "pointer");
+					});
+					//마우스 아웃되면 다시 시작
+					banner.mouseout(function(){
+						rollingId = setInterval(function() { rollingStart(); }, 3000);
+						$(this).css("cursor", "default");
+					});
+			*/
+
+
+			function rollingStart() {
+				$banner.css("width", $bannerWidth * $bannerLength + "px");
+				$banner.css("height", $bannerHeight + "px");
+				//alert(bannerHeight);
+				//배너의 좌측 위치를 옮겨 준다.
+				$banner.animate({
+					left: -$bannerWidth + "px"
+				}, 2000, function () { //숫자는 롤링 진행되는 시간이다.
+					//첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+					$(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+					//뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+					$(this).find("li:first").remove();
+					//다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+					$(this).css("left", 0);
+					//이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+				});
+			}
+		});
+		//-->
+	</script>
+
+
+
+    <!--냅바-->
+    <script>
+        window.onscroll = function () {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+
+        //닿으면 sticky
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+
+
+    <!--접기기능-->
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var a;
+
+        var coll2 = document.getElementsByClassName("collapsible2");
+        var b;
+
+        var coll3 = document.getElementsByClassName("collapsible3");
+        var c;
+
+
+
+
+        for (a = 0; a < coll.length; a++) {
+            coll[a].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+
+
+        for (b = 0; b < coll2.length; b++) {
+            coll2[b].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content2 = this.nextElementSibling;
+                if (content2.style.display === "block") {
+                    content2.style.display = "none";
+                } else {
+                    content2.style.display = "block";
+                }
+            });
+        }
+
+        for (c = 0; c < coll3.length; c++) {
+            coll3[c].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content3 = this.nextElementSibling;
+                if (content3.style.display === "block") {
+                    content3.style.display = "none";
+                } else {
+                    content3.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+
+
+</body>
+
+</html>
